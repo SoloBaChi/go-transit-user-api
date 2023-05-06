@@ -1,7 +1,3 @@
-
-
-
-
 const express = require("express");
 const connectDB = require("./backend/database/connection");
 const { json, urlencoded } = require("body-parser");
@@ -22,7 +18,7 @@ connectDB();
 app.use("/", require("./backend/routes/user-routes"));
 
 app.get("/", (req, res) => {
-  res.json("hello client");
+  res.json("Hey User");
 });
 
 const PORT = process.env.PORT || 4000;
