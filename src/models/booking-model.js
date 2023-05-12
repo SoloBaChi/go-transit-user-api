@@ -1,30 +1,29 @@
 const mongoose = require('mongoose')
 
-const BookingSchema = new Schema({
-    depature: {
+const BookingSchema = new mongoose.Schema({
+    travellingFrom: {
         type: String,
         required: true
     },
-    destination:{
+    travellingTo:{
         type: String,
         required: true
     },
-    date:{
+    departureDate:{
         type: Date,
         required: true
     },
-    time:{},
-    seatNumber:{
+    arrivalDate:{
+     type:Date,
+     required:true
+     },
+    timeOfTravel:{
         type: String,
         required: true
     },
-    numberOfSeats:{
+    numberOfTickets:{
         type: Number,
-        required: false
-    },
-    price:{
-        type: Number,
-        required: true
+        required:true
     }
 })
 const Bookmodel = mongoose.model('Booking', BookingSchema)

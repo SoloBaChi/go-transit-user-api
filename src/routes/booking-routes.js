@@ -1,5 +1,5 @@
 const express = require('express')
-const { createBooking } = require('../controllers/booking-controllers.js')
+const createBooking  = require('../controllers/booking-controllers')
 
 
 bookingRouter = express.Router()
