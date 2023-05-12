@@ -1,5 +1,5 @@
 const express = require("express");
-const connectDB = require("./backend/database/connection");
+const connectDB = require("./database/connection");
 const { json, urlencoded } = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -15,7 +15,7 @@ app.use(cors());
 dotenv.config({ path: ".env" });
 connectDB();
 
-app.use("/", require("./backend/routes/user-routes"));
+app.use("/", require("./routes/user-routes"));
 
 app.get("/", (req, res) => {
   res.json("Hey User");
