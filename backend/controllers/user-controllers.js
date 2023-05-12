@@ -36,6 +36,15 @@ const signup = async (req, res, next) => {
   }
   return res.status(201).json({ user });
 };
+const userDetails = async (req, res) => {
+  try {
+    const allUsers = await User.find({})
+    res.status(200).json({ data: allUsers })
+  } catch (e) {
+    console.log(e.message)
+    res.status(400).end
+  }
+}
 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
@@ -55,4 +64,4 @@ const login = async (req, res, next) => {
   return res.status(200).json({ message: "Login Successful." });
 };
 
-module.exports = { signup, login };
+module.exports = { signup, login, userDetails };
