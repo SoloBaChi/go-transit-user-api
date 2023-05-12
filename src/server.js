@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({origin:"http://localhost:3000/"}));
 
 //configure env file
 dotenv.config({ path: ".env" });
