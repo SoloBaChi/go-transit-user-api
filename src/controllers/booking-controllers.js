@@ -37,4 +37,14 @@ const Booking = require("../models/booking-model")
  return res.status(400).end();
  }
  } 
- module.exports = createBooking;
+ const getBookedDoc = async(req,res) => {
+ try{
+ const id = req.params.id
+ const bookedDoc = await Booking.findOne({_id:id});
+ res.status(200).json({data:bookedDoc,"message":"succefully fetched book documents"})
+ }
+ catch(e){
+ return res.status(400).end();
+ }
+ } 
+ module.exports = { createBooking, getBookedDoc}
