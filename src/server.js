@@ -11,7 +11,13 @@ const app = express();
 
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
-app.use(cors({origin:"https://go-transit-budc.onrender.com/",credentials:true}));
+app.use(cors({
+  // origin:"http://localhost:3000",credentials:true,
+  // origin:"https://go-transit-budc.onrender.com",credentials:true,
+  origin:"*",credentials:true,
+  
+
+}));
 
 //configure env file
 dotenv.config({ path: ".env" });
